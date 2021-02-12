@@ -5,7 +5,7 @@ class Vare {
   String navn;
   float pris;
 
-  // konstruktor
+// konstruktor
   Vare(int i, String n, float p) {
 
     id = i;

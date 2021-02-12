@@ -5,16 +5,18 @@ import controlP5.*;
 ControlP5 cp5;
 
 View view;
+Model model;
 
 ArrayList<Vare> varer = new ArrayList<Vare>();
 
 
 void setup() {
   size(768, 512);
-
+  
   cp5 = new ControlP5(this);
 
   view = new View();
+  model = new Model();
 }
 
 void draw() {
