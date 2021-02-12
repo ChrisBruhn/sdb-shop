@@ -27,7 +27,7 @@ class View {
       .setFont(font)
       .setColor(color(255))
       .setAutoClear(false)
-      .setLabel("");
+      .setLabel("Produkt ID");
       
     amount = cp5.addTextfield("amount");
     amount.setPosition(460, 20)
@@ -35,7 +35,7 @@ class View {
       .setFont(font)
       .setColor(color(255))
       .setAutoClear(false)
-      .setLabel("");
+      .setLabel("Mængde");
       
     reciept = cp5.addTextlabel("reciept");
     reciept.setPosition(10, 10)
@@ -47,12 +47,18 @@ class View {
     confirmButton = cp5.addButton("confirm");
     confirmButton.setPosition(620, 20)
       .setSize(100, 40)
+      .setFont(createFont("arial", 14))
       .setLabel("Add to kart");
     
   }
   
   // Retuner ID are
   int getID() {
+    if (Float.isNaN(float(cp5.get(Textfield.class, "productID").getText()))) {
+      println("Nigga that aint a NUMBER");
+      return -1;
+    }
+    
     this.id = int(cp5.get(Textfield.class, "productID").getText());
     return this.id; 
     
@@ -60,6 +66,11 @@ class View {
   
   // Retuner mængde af samme vare
   int getAmount() {
+    if (Float.isNaN(float(cp5.get(Textfield.class, "amount").getText()))) {
+      println("Nigga that aint a NUMBER");
+      return -1;
+    }
+    
     this.a = int(cp5.get(Textfield.class, "amount").getText());
     return this.a;
     
@@ -69,14 +80,26 @@ class View {
   
   }
   
+  void drawText() {
+    text("", 0, 0);
+  }
+  
   
   
 
 }  
   
 void confirm() {
-  println("ID - ", view.getID());
-  println("Amount - ", view.getAmount());
-    
-  println("Product has been added to kart.");
+  
+  if (view.getID() == -1 || view.getAmount() == -1) {
+    println();
+  } else {
+  
+    println("ID - ", view.getID());
+    println("Amount - ", view.getAmount());
+        
+    println("Product has been added to kart.");
+  }
+  
+  
 }
