@@ -1,0 +1,8 @@
+Vi skal lavet et kasseapparat efter Model, View, Controller -modellen.
+
+Model (data), skal læse en kommasepareret tekstfil med varer og returnere en arraylist af varer til controller.
+Skal kunne gemme et salg som kommasepareret fil, hvor der gemmes id og antal varer samt data og tidspunkt for køb.
+
+Gui (Bruger interaktion), skal kunne søge og finde en vare ud fra ID. ID returneres til Controller og controlleren returnerer varen til GUI. Varen, med antal, tilføjes en liste så kunden har mulighed for at købe flere varer. Gui returnerer en intListe med ID på varen samt antal til Controller.
+
+Controler henter en arraylist med varer hos model og initierer GUI. Controller skal kunne modtage et ID og finde varer ud fra dette som den skal returnere til GUI. Når salget afsluttes, skal Controller modtage en intliste fra GUI med ID og antal og finder varens pris ud fra ID og beregne prisen, som den returnerer til GUI, sammen med det totale beløb uden moms og med moms. 
