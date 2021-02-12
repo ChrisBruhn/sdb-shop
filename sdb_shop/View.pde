@@ -19,7 +19,6 @@ class View {
   
   View() {
     
-    
     font = createFont("Arial", 24);
     
     productID = cp5.addTextfield("productID");
@@ -54,12 +53,14 @@ class View {
   
   // Retuner ID are
   int getID() {
+    this.id = int(cp5.get(Textfield.class, "productID").getText());
     return this.id; 
     
   }
   
   // Retuner mængde af samme vare
   int getAmount() {
+    this.a = int(cp5.get(Textfield.class, "amount").getText());
     return this.a;
     
   }
@@ -74,8 +75,8 @@ class View {
 }  
   
 void confirm() {
-   //this.id = int(this.productID.getValue());
-   //this.a = int(this.amount.getValue());
+  println("ID - ", view.getID());
+  println("Amount - ", view.getAmount());
     
-   println("Product has been added to kart.");
+  println("Product has been added to kart.");
 }
