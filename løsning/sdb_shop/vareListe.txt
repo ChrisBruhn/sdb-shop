@@ -1,0 +1,10 @@
+10,Sødmælk,5.95
+11,Tykmælk,6.95
+12,Letmælk,4,95
+13,Skummemælk,3.95
+21,Banan,9.00
+22,Agurk,5.00
+23,Tomat,8.98
+30,Rugbrød,6.80
+31,Franskbrød,4.95
+32,Wienerbrød,10.25
