@@ -1,5 +1,4 @@
-class Model{
-  
+class Model {
   
   // Model attributter
   
@@ -23,24 +22,35 @@ class Model{
     return vA;
   }
   
-  void gemListe(ArrayList<Vare> vA){
+  void gemListe(ArrayList<OrdreLinje> oL){
     // var def.
-    String[] gem = new String[100];
-    String[] vareP = new String[3];
-    Vare v;
+    String[] gem = new String[0];
+    String[] oLP = new String[4];
+    OrdreLinje o;
     
     // kode
+    gem = loadStrings("ukendtFil.txt");
+    gem = append(gem, (str(hour()) + ":" + str(minute()) + " - " + str(day()) + "/" + str(month()) + " - " + str(year())));
     
-    for(int i = 0; i < vA.size(); i++){
-      v = vA.get(i);
-      vareP[0] = str(v.getId());
-      vareP[1] = v.getNavn();
-      vareP[2] = str(v.getPris());
+    for(int i = 0; i < oL.size(); i++){
+      o = oL.get(i);
+      oLP[0] = str(o.getId());
+      oLP[1] = o.getNavn();
+      oLP[2] = str(o.getPris());
+      oLP[3] = str(o.getAntal());
       
-      String vare = join(vareP, ",");
-      gem[i] = vare;
+      String ordre = join(oLP, ",");
+      gem = append(gem, ordre);
     }
-    saveStrings("vareListe.txt", gem);
+    saveStrings("ukendtFil.txt", gem);
+  }
+  
+  Vare findNavnD(int id){
+    
+  }
+  
+  Vare findPris(int id){
+    
   }
   
 }
