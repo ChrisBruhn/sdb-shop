@@ -109,6 +109,7 @@ class View {
     fill(255);
     //textSize(20);
     text("Pris exmoms: "+total, width-300, height-130);
+    // jeg lader logikken være her, fordi alternativet er at skulle bruge flere parametere. 
     text("Moms: "+((total*1.25)-total), width-300, height-100);
     text("Total: "+((total*1.25)), width-300, height-70);
   }
